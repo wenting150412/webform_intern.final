@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.68518533426466,
+          24.140908124062804
+        ]
+      },
+      "properties": {
+        "LAYER": 8020203,
+        "ID": 20203208947,
+        "ORGAN": "GC7",
+        "OP_CODE": 0,
+        "BURY_DATE": "2018-07-01",
+        "NUM": 1137,
+        "LENGTH": 8,
+        "MATERIAL": "附壁式",
+        "USEMODE": 0,
+        "DATAMODE": 1,
+        "NOTE": null,
+        "TOWNSHIP": 6600100,
+        "HEIGHT": 76.82,
+        "MOD_DATE": "2024-08-30",
+        "STATE": 2,
+        "DATA1": null,
+        "DATA2": null,
+        "LEVEL": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.68551304145424,
+          24.140741657738797
+        ]
+      },
+      "properties": {
+        "LAYER": 8020203,
+        "ID": 20203208948,
+        "ORGAN": "GC7",
+        "OP_CODE": 0,
+        "BURY_DATE": "2018-07-01",
+        "NUM": 1139,
+        "LENGTH": 8,
+        "MATERIAL": "附壁式",
+        "USEMODE": 0,
+        "DATAMODE": 1,
+        "NOTE": null,
+        "TOWNSHIP": 6600100,
+        "HEIGHT": 76.76,
+        "MOD_DATE": "2024-08-30",
+        "STATE": 2,
+        "DATA1": null,
+        "DATA2": null,
+        "LEVEL": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.68436808772539,
+          24.140347160459033
+        ]
+      },
+      "properties": {
+        "LAYER": 8020203,
+        "ID": 20203208949,
+        "ORGAN": "GC7",
+        "OP_CODE": 0,
+        "BURY_DATE": "2018-07-01",
+        "NUM": 1133,
+        "LENGTH": 7,
+        "MATERIAL": "附壁式",
+        "USEMODE": 0,
+        "DATAMODE": 1,
+        "NOTE": null,
+        "TOWNSHIP": 6600100,
+        "HEIGHT": 75.81,
+        "MOD_DATE": "2024-08-30",
+        "STATE": 2,
+        "DATA1": null,
+        "DATA2": null,
+        "LEVEL": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.6844671934424,
+          24.140442128049322
+        ]
+      },
+      "properties": {
+        "LAYER": 8020203,
+        "ID": 20203208950,
+        "ORGAN": "GC7",
+        "OP_CODE": 0,
+        "BURY_DATE": "2018-07-01",
+        "NUM": 1134,
+        "LENGTH": 8,
+        "MATERIAL": "附壁式",
+        "USEMODE": 0,
+        "DATAMODE": 1,
+        "NOTE": null,
+        "TOWNSHIP": 6600100,
+        "HEIGHT": 75.92,
+        "MOD_DATE": "2024-08-30",
+        "STATE": 2,
+        "DATA1": null,
+        "DATA2": null,
+        "LEVEL": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>檔案上傳測試 - XLSX 轉 GeoJSON</title>
+</head>
+<body>
+    <h2>檔案上傳測試 (XLSX)</h2>
+    <form action="http://127.0.0.1:5000/api/convert" method="POST" enctype="multipart/form-data">
+        <label for="file">選擇 XLSX 檔案:</label><br>
+        <input type="file" id="file" name="file" accept=".xlsx,.xml" required><br><br>
+        <input type="submit" value="上傳並轉換">
+    </form>
+</body>
+</html>
