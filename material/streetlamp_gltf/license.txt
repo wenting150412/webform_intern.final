@@ -1,0 +1,11 @@
+Model Information:
+* title:	Streetlamp URBAN
+* source:	https://sketchfab.com/3d-models/streetlamp-urban-c5793f004d9f4bdf9979ff179619e9c0
+* author:	Streetlight (https://sketchfab.com/windowsmedies)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Streetlamp URBAN" (https://sketchfab.com/3d-models/streetlamp-urban-c5793f004d9f4bdf9979ff179619e9c0) by Streetlight (https://sketchfab.com/windowsmedies) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
