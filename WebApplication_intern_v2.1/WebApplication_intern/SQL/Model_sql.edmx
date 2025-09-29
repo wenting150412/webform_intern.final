@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cesiumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'cesium.dbo.login' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="account" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="account" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="streetlampData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LAYER" Type="int" />
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ORGAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="OP_CODE" Type="int" />
+          <Property Name="BURY_DATE" Type="date" />
+          <Property Name="NUM" Type="nvarchar" MaxLength="50" />
+          <Property Name="LENGTH" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MATERIAL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USEMODE" Type="int" />
+          <Property Name="DATAMODE" Type="int" />
+          <Property Name="NOTE" Type="nvarchar" MaxLength="255" />
+          <Property Name="POINT_X" Type="decimal" Precision="15" Scale="3" />
+          <Property Name="POINT_Y" Type="decimal" Precision="15" Scale="3" />
+          <Property Name="TOWNSHIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="HEIGHT" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MOD_DATE" Type="date" />
+          <Property Name="STATE" Type="int" />
+          <Property Name="DATA1" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATA2" Type="nvarchar" MaxLength="50" />
+          <Property Name="LEVEL" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="cesiumModelStoreContainer">
+          <EntitySet Name="streetlampData" EntityType="Self.streetlampData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[login].[account] AS [account], 
+[login].[password] AS [password]
+FROM [dbo].[login] AS [login]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cesiumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="account" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="cesiumEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="login" EntityType="Self.login" />
+          <EntitySet Name="streetlampData" EntityType="cesiumModel.streetlampData" />
+        </EntityContainer>
+        <EntityType Name="streetlampData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LAYER" Type="Int32" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORGAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OP_CODE" Type="Int32" />
+          <Property Name="BURY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LENGTH" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MATERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USEMODE" Type="Int32" />
+          <Property Name="DATAMODE" Type="Int32" />
+          <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="POINT_X" Type="Decimal" Precision="15" Scale="3" />
+          <Property Name="POINT_Y" Type="Decimal" Precision="15" Scale="3" />
+          <Property Name="TOWNSHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HEIGHT" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MOD_DATE" Type="DateTime" Precision="0" />
+          <Property Name="STATE" Type="Int32" />
+          <Property Name="DATA1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATA2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cesiumModelStoreContainer" CdmEntityContainer="cesiumEntities1">
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="cesiumModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="streetlampData">
+            <EntityTypeMapping TypeName="cesiumModel.streetlampData">
+              <MappingFragment StoreEntitySet="streetlampData">
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="DATA2" ColumnName="DATA2" />
+                <ScalarProperty Name="DATA1" ColumnName="DATA1" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="MOD_DATE" ColumnName="MOD_DATE" />
+                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+                <ScalarProperty Name="TOWNSHIP" ColumnName="TOWNSHIP" />
+                <ScalarProperty Name="POINT_Y" ColumnName="POINT_Y" />
+                <ScalarProperty Name="POINT_X" ColumnName="POINT_X" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="DATAMODE" ColumnName="DATAMODE" />
+                <ScalarProperty Name="USEMODE" ColumnName="USEMODE" />
+                <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+                <ScalarProperty Name="LENGTH" ColumnName="LENGTH" />
+                <ScalarProperty Name="NUM" ColumnName="NUM" />
+                <ScalarProperty Name="BURY_DATE" ColumnName="BURY_DATE" />
+                <ScalarProperty Name="OP_CODE" ColumnName="OP_CODE" />
+                <ScalarProperty Name="ORGAN" ColumnName="ORGAN" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LAYER" ColumnName="LAYER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
